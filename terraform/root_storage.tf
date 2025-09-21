@@ -1,6 +1,5 @@
 resource "aws_s3_bucket" "root_storage_bucket" {
   bucket        = "${local.prefix}-rootbucket"
-  acl           = "private"
   force_destroy = true
   tags = merge(var.tags, {
     Name = "${local.prefix}-rootbucket"

@@ -22,7 +22,7 @@ provider "databricks" {
   account_id = var.databricks_account_id
 }
 
-# provider "databricks" {
-#   alias = "root"
-#   host   = databricks_mws_workspaces.root.workspace_url
-# }
+provider "databricks" {
+  alias = "root"
+  host   = databricks_mws_workspaces.this.workspace_url
+}

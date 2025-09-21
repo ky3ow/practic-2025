@@ -14,6 +14,10 @@ variable "region" {
   default = "eu-west-1"
 }
 
+variable "admins" {
+  default = ["vova2341591@gmail.com"]
+}
+
 resource "random_string" "naming" {
   special = false
   upper   = false
