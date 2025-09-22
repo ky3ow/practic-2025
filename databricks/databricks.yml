@@ -25,6 +25,7 @@ resources:
             num_workers: 1
             is_single_node: true
             kind: CLASSIC_PREVIEW
+            spark_version: 16.4.x-scala2.12
       schedule:
         quartz_cron_expression: "0 3 * * * ?"
         timezone_id: "UTC"
