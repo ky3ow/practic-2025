@@ -24,6 +24,7 @@ resources:
             node_type_id: r5d.large
             num_workers: 1
             is_single_node: true
+            kind: CLASSIC_PREVIEW
       schedule:
         quartz_cron_expression: "0 3 * * * ?"
         timezone_id: "UTC"
