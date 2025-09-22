@@ -1,0 +1,27 @@
+bundle:
+  name: weather-etl
+
+targets:
+  dev:
+    mode: development
+    run_as: 
+      service_principal_name: 24d32576-8267-4e26-92e9-3743e33cc3ef
+    workspace:
+      host: https://dbc-d2875e16-9750.cloud.databricks.com/
+
+resources:
+  jobs:
+    weather_etl_job:
+      name: "Daily Weather ETL"
+      tasks:
+        - task_key: run_weather
+          notebook_task:
+            notebook_path: ./process_weather.py
+          job_cluster_key: etl_cluster
+      job_clusters:
+        - job_cluster_key: etl_cluster
+          new_cluster:
+            policy_id: "00190CFF085B858D"
+      schedule:
+        quartz_cron_expression: "0 3 * * * ?"
+        timezone_id: "UTC"
