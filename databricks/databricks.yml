@@ -21,7 +21,9 @@ resources:
       job_clusters:
         - job_cluster_key: etl_cluster
           new_cluster:
-            policy_id: "00190CFF085B858D"
+            node_type_id: r5d.large
+            num_workers: 1
+            is_single_node: true
       schedule:
         quartz_cron_expression: "0 3 * * * ?"
         timezone_id: "UTC"
