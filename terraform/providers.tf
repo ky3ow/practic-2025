@@ -9,6 +9,13 @@ terraform {
       version = "~> 1.55"
     }
   }
+
+  backend "s3" {
+    bucket = "demo7dllyt-state"
+    key = "terraform/state/databricks.tfstate"
+    region = "eu-west-1"
+    encrypt = true
+  }
 }
 
 provider "aws" {
