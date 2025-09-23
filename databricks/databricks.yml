@@ -27,5 +27,6 @@ resources:
             kind: CLASSIC_PREVIEW
             spark_version: 16.4.x-scala2.12
       schedule:
-        quartz_cron_expression: "0 3 * * * ?"
+        quartz_cron_expression: "3 0 * * * ?"
         timezone_id: "UTC"
+        pause_status: UNPAUSED
