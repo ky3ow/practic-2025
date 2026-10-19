@@ -1,6 +1,8 @@
 # Intro
 
-This project is responsible for deploying AWS in Databricks using Terraform, and organizes the daily processing and visualization of weather data using DevOps and IAC approaches
+This project is responsible for deploying AWS in Databricks using Terraform, and organizes the daily processing (ETL pipeline) and visualization of weather data using DevOps and IAC approaches.
+
+After processing, for demonstration, the data in Databricks was queried from PowerBI.
 
 # File structure
 
@@ -46,3 +48,39 @@ Databricks is configured with Unity Catalog, the sandbox catalog data is stored 
 # Architecture
 
 ![architecture](./architecture.png)
+
+# Images
+
+As this was shut down to not accumulate costs, here are screenshots of what was achieved:
+
+
+<img width="2035" height="531" alt="image" src="https://github.com/user-attachments/assets/876878f3-a682-4703-a20b-4bb351558e61" />
+
+
+Deployed databricks via IAC
+
+<img width="2067" height="935" alt="image" src="https://github.com/user-attachments/assets/29246b6c-f28e-4e12-9da5-00f898fffb2f" />
+
+
+Job running which was deployed from github actions by databricks asset bundle
+
+
+
+<img width="2008" height="419" alt="image" src="https://github.com/user-attachments/assets/a9d1847d-f680-4e55-9998-42dd32d33d48" />
+
+
+Data residing in S3 bucket (and not in databricks-managed location, which is important)
+
+
+
+<img width="1258" height="997" alt="image" src="https://github.com/user-attachments/assets/0fce8b2c-f39a-44ff-9eca-6ca5d8dab6d3" />
+
+
+Connecting powerbi to data in databricks
+
+
+
+<img width="1302" height="592" alt="image" src="https://github.com/user-attachments/assets/f53e1316-fce8-4b57-9a4e-a10a7898c10c" />
+
+
+Sample report on the gathered data
