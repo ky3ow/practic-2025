@@ -1,8 +1,8 @@
-# Вступ
+# Intro
 
-Цей проєкт відповідає за розгортку AWS у Databricks за допомогою terraform, та організує щоденну обробку та візуалізацію погодних даних, з використанням підходів DevOps i IAC
+This project is responsible for deploying AWS in Databricks using Terraform, and organizes the daily processing and visualization of weather data using DevOps and IAC approaches
 
-# Файлова структура
+# File structure
 
 ```
 .
@@ -25,11 +25,11 @@
 
 # Terraform
 
-Розгортання самого середовища відбувається за допомогою terraform.
+The environment itself is deployed using Terraform.
 
-Для цього треба налаштувати автентифікацію через `aws cli` та активувати підписку на Databricks y AWS Marketplace.
+To do this, you need to set up authentication via the `aws cli` and activate a Databricks subscription on the AWS Marketplace.
 
-Далі потрібно виконати команди
+Next, you need to run the following commands
 
 ```bash
 cd terraform
@@ -37,12 +37,12 @@ terraform init
 terraform apply
 ```
 
-Після цього середовище databricks буде готове та посилання на нього буде виведено.
+After that, the Databricks environment will be ready, and a link to it will be displayed.
 
 # Databricks
 
-Databricks налаштований з Unity Catalog, дані каталогу sandbox зберігаються в s3 бакеті за допомогою External Location та Credential, обробка даних та створення таблиць за їх ненаявності відбувається за допомогою ноутбуку `databricks/process_weather.py` та відбувається по розкладу кожний день, організовано за допомогою Jobs, що розгорнуті через `databricks bundle deploy` (`databricks/databricks.yml`)
+Databricks is configured with Unity Catalog, the sandbox catalog data is stored in an S3 bucket using External Location and Credentials; data processing and table creation (if tables do not exist) are performed using the `databricks/process_weather.py` script on a laptop and run on a daily schedule, organized via Jobs deployed using `databricks bundle deploy` (`databricks/databricks.yml`)
 
-# Архітектура рішення
+# Architecture
 
-![архітектура додатку](./architecture.png)
+![architecture](./architecture.png)
